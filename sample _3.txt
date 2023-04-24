@@ -1,0 +1,12 @@
+In .NET Framework versions 1.0 and 1.1, the common language runtime provides a backstop for unhandled exceptions 
+in the following situations: There is no such thing as an unhandled exception on a thread pool thread. When a task 
+throws an exception that it does not handle, the runtime prints the exception stack trace to the console and then 
+returns the thread to the thread pool. There is no such thing as an unhandled exception on a thread created with 
+the Start method of the Thread class. When code running on such a thread throws an exception that it does not 
+handle, the runtime prints the exception stack trace to the console and then gracefully terminates the thread.
+There is no such thing as an unhandled exception on the finalizer thread. When a finalizer throws an exception 
+that it does not handle, the runtime prints the exception stack trace to the console and then allows the finalizer 
+thread to resume running finalizers. The foreground or background status of a managed thread does not affect this 
+behavior. For unhandled exceptions on threads originating in unmanaged code, the difference is more subtle. The 
+runtime JIT-attach dialog preempts the operating system dialog for managed exceptions or native exceptions on 
+threads that have passed through native code. The process terminates in all cases.

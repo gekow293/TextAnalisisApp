@@ -1,0 +1,16 @@
+Do ensure that a thread that has entered a monitor always leaves that monitor, even if an exception occurs while 
+the thread is in the monitor. The C# lock statement and the Visual Basic SyncLock statement provide this behavior 
+automatically, employing a finally block to ensure that Monitor.Exit is called. If you cannot ensure that Exit 
+will be called, consider changing your design to use Mutex. A mutex is automatically released when the thread 
+that currently owns it terminates.
+Do use multiple threads for tasks that require different resources, and avoid assigning multiple threads to 
+a single resource. For example, any task involving I/O benefits from having its own thread, because that thread 
+will block during I/O operations and thus allow other threads to execute. User input is another resource that 
+benefits from a dedicated thread. On a single-processor computer, a task that involves intensive computation 
+coexists with user input and with tasks that involve I/O, but multiple computation-intensive tasks contend with 
+each other.
+Consider using methods of the Interlocked class for simple state changes, instead of using the lock statement 
+(SyncLock in Visual Basic). The lock statement is a good general-purpose tool, but the Interlocked class provides 
+better performance for updates that must be atomic. Internally, it executes a single lock prefix if there is no 
+contention. In code reviews, watch for code like that shown in the following examples. In the first example, a 
+state variable is incremented:

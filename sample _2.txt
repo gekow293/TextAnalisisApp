@@ -1,0 +1,6 @@
+When threads are allowed to fail silently, without terminating the application, serious programming problems 
+can go undetected. This is a particular problem for services and other applications that run for extended periods. 
+As threads fail, program state gradually becomes corrupted. Application performance may degrade, or the application 
+might become unresponsive. Allowing unhandled exceptions in threads to proceed naturally, until the operating system 
+terminates the program, exposes such problems during development and testing. Error reports on program terminations 
+support debugging.

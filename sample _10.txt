@@ -1,0 +1,16 @@
+Consider the following guidelines when using multiple threads: Don't use Thread.Abort to terminate other threads. 
+Calling Abort on another thread is akin to throwing an exception on that thread, without knowing what point that 
+thread has reached in its processing.
+Don't use Thread.Suspend and Thread.Resume to synchronize the activities of multiple threads. Do use Mutex, 
+ManualResetEvent, AutoResetEvent, and Monitor.
+Don't control the execution of worker threads from your main program (using events, for example). Instead, 
+design your program so that worker threads are responsible for waiting until work is available, executing it, 
+and notifying other parts of your program when finished. If your worker threads do not block, consider using 
+thread pool threads. Monitor.PulseAll is useful in situations where worker threads block.
+Don't use types as lock objects. That is, avoid code such as lock(typeof(X)) in C# or SyncLock(GetType(X)) in 
+Visual Basic, or the use of Monitor.Enter with Type objects. For a given type, there is only one instance of 
+System.Type per application domain. If the type you take a lock on is public, code other than your own can take 
+locks on it, leading to deadlocks. For additional issues, see Reliability Best Practices.
+Use caution when locking on instances, for example lock(this) in C# or SyncLock(Me) in Visual Basic. If other 
+code in your application, external to the type, takes a lock on the object, deadlocks could occur.
+

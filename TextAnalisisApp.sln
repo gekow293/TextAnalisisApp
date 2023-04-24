@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1433
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAnalisisAppView", "TextAnalisisApp\TextAnalisisAppView.csproj", "{F04DBBCA-C910-45FA-911C-8E571C9ABD24}"
+	ProjectSection(ProjectDependencies) = postProject
+		{12F6B350-6946-45D4-9CA3-2944F3EDA4F8} = {12F6B350-6946-45D4-9CA3-2944F3EDA4F8}
+		{A0686285-7967-42EC-89E3-15BFDAE90182} = {A0686285-7967-42EC-89E3-15BFDAE90182}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAnalisisAppControl", "TextAnalisisControl\TextAnalisisAppControl.csproj", "{12F6B350-6946-45D4-9CA3-2944F3EDA4F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAnalysisAppUnitTest", "TextAnalysisAppUnitTest\TextAnalysisAppUnitTest.csproj", "{BA5E81DA-1F14-42C5-A834-183FD7BDBBF2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{12F6B350-6946-45D4-9CA3-2944F3EDA4F8} = {12F6B350-6946-45D4-9CA3-2944F3EDA4F8}
+		{A0686285-7967-42EC-89E3-15BFDAE90182} = {A0686285-7967-42EC-89E3-15BFDAE90182}
+		{F04DBBCA-C910-45FA-911C-8E571C9ABD24} = {F04DBBCA-C910-45FA-911C-8E571C9ABD24}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAnalisisAppModel", "TextAnalisisAppModel\TextAnalisisAppModel.csproj", "{A0686285-7967-42EC-89E3-15BFDAE90182}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F04DBBCA-C910-45FA-911C-8E571C9ABD24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F04DBBCA-C910-45FA-911C-8E571C9ABD24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F04DBBCA-C910-45FA-911C-8E571C9ABD24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F04DBBCA-C910-45FA-911C-8E571C9ABD24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12F6B350-6946-45D4-9CA3-2944F3EDA4F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12F6B350-6946-45D4-9CA3-2944F3EDA4F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12F6B350-6946-45D4-9CA3-2944F3EDA4F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12F6B350-6946-45D4-9CA3-2944F3EDA4F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA5E81DA-1F14-42C5-A834-183FD7BDBBF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA5E81DA-1F14-42C5-A834-183FD7BDBBF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA5E81DA-1F14-42C5-A834-183FD7BDBBF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA5E81DA-1F14-42C5-A834-183FD7BDBBF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0686285-7967-42EC-89E3-15BFDAE90182}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0686285-7967-42EC-89E3-15BFDAE90182}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0686285-7967-42EC-89E3-15BFDAE90182}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0686285-7967-42EC-89E3-15BFDAE90182}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0DF2132D-9D6F-4A23-BE7C-55BE63BE0ECD}
+	EndGlobalSection
+EndGlobal

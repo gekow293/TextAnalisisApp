@@ -1,0 +1,8 @@
+The System.Threading.ThreadPool class provides your application with a pool of worker threads that are 
+managed by the system, allowing you to concentrate on application tasks rather than thread management. If you 
+have short tasks that require background processing, the managed thread pool is an easy way to take advantage of 
+multiple threads. Use of the thread pool is significantly easier in Framework 4 and later, since you can create 
+Task and Task<TResult> objects that perform asynchronous tasks on thread pool threads.
+.NET uses thread pool threads for many purposes, including Task Parallel Library (TPL) operations, asynchronous 
+I/O completion, timer callbacks, registered wait operations, asynchronous method calls using delegates, and 
+System.Net socket connections.

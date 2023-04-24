@@ -1,0 +1,14 @@
+A race condition is a bug that occurs when the outcome of a program depends on which of two or more threads reaches 
+a particular block of code first. Running the program many times produces different results, and the result of any 
+given run cannot be predicted. A simple example of a race condition is incrementing a field. Suppose a class has 
+a private static field (Shared in Visual Basic) that is incremented every time an instance of the class is created, 
+using code such as objCt++; (C#) or objCt += 1 (Visual Basic). This operation requires loading the value from objCt 
+into a register, incrementing the value, and storing it in objet. In a multithreaded application, a thread that has 
+loaded and incremented the value might be preempted by another thread which performs all three steps; when the 
+first thread resumes execution and stores its value, it overwrites objCt without taking into account the fact that 
+the value has changed in the interim. This particular race condition is easily avoided by using methods of the 
+Interlocked class, such as Interlocked.Increment. To read about other techniques for synchronizing data among 
+multiple threads, see Synchronizing Data for Multithreading. Race conditions can also occur when you synchronize 
+the activities of multiple threads. Whenever you write a line of code, you must consider what might happen if a 
+thread were preempted before executing the line (or before any of the individual machine instructions that make up 
+the line), and another thread overtook it.

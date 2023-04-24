@@ -1,0 +1,8 @@
+If a thread makes an unmanaged call into the operating system that has blocked the thread in 
+unmanaged code, the runtime will not take control of it for Thread.Interrupt or Thread.Abort. 
+In the case of Thread.Abort, the runtime marks the thread for Abort and takes control of it when 
+it re-enters managed code. It is preferable for you to use managed blocking rather than unmanaged blocking. 
+WaitHandle.WaitOne,WaitHandle.WaitAny, WaitHandle.WaitAll, Monitor.Enter, Monitor.TryEnter, Thread.Join, 
+GC.WaitForPendingFinalizers, and so on are all responsive to Thread.Interrupt and to Thread.Abort. Also, 
+if your thread is in a single-threaded apartment, all these managed blocking operations will correctly pump 
+messages in your apartment while your thread is blocked.
